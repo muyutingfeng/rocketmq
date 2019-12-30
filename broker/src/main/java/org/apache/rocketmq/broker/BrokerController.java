@@ -776,6 +776,7 @@ public class BrokerController {
         return this.brokerConfig.getBrokerIP1() + ":" + this.nettyServerConfig.getListenPort();
     }
 
+    //TODO broker端心跳包发送
     public void start() throws Exception {
         if (this.messageStore != null) {
             this.messageStore.start();
@@ -811,6 +812,7 @@ public class BrokerController {
 
         this.registerBrokerAll(true, false, true);
 
+        //broker 30s发送心跳包
         this.scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
 
             @Override

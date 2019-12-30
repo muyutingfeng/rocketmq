@@ -111,6 +111,7 @@ public class BrokerOuterAPI {
         this.remotingClient.updateNameServerAddressList(lst);
     }
 
+    //TODO 该方法主要是遍历 NameServer 列表， Broker 消息服务器依次向 NameServer发送心跳包。
     public List<RegisterBrokerResult> registerBrokerAll(
         final String clusterName,
         final String brokerAddr,
@@ -171,6 +172,7 @@ public class BrokerOuterAPI {
         return registerBrokerResultList;
     }
 
+    //TODO 网络发送代码
     private RegisterBrokerResult registerBroker(
         final String namesrvAddr,
         final boolean oneway,

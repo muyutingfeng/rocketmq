@@ -38,7 +38,7 @@ import org.apache.rocketmq.remoting.netty.NettyServerConfig;
 import org.apache.rocketmq.remoting.netty.TlsSystemConfig;
 import org.apache.rocketmq.srvutil.FileWatchService;
 
-
+//TODO nameserver实际控制器
 public class NamesrvController {
     private static final InternalLogger log = InternalLoggerFactory.getLogger(LoggerName.NAMESRV_LOGGER_NAME);
 
@@ -73,14 +73,6 @@ public class NamesrvController {
         this.configuration.setStorePathFromConfig(this.namesrvConfig, "configStorePath");
     }
 
-    /**
-     * 第一步是初始化配置
-     * 创建NamesrvController实例，并开启两个定时任务：
-     * 每隔10s扫描一次Broker，移除处于不激活的Broker；
-     * 每隔10s打印一次KV配置。
-     * 第三步注册钩子函数，启动服务器并监听Broker。
-     * @return
-     */
     public boolean initialize() {
 
         this.kvConfigManager.load();

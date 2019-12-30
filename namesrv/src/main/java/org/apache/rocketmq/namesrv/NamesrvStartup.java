@@ -40,7 +40,7 @@ import org.apache.rocketmq.remoting.protocol.RemotingCommand;
 import org.apache.rocketmq.srvutil.ServerUtil;
 import org.apache.rocketmq.srvutil.ShutdownHookThread;
 import org.slf4j.LoggerFactory;
-
+//TODO nameserver启动类
 public class NamesrvStartup {
 
     private static InternalLogger log;
